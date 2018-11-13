@@ -1,3 +1,4 @@
+package sessions.s03;
 public class Mediaaritmetica {
 	public static void main(String[] args) {
 

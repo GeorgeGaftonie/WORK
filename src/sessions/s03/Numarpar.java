@@ -1,4 +1,4 @@
-package parnumber;
+package sessions.s03;
 
 import java.util.Scanner;
 

@@ -1,3 +1,4 @@
+package sessions.s03;
 import java.util.Arrays;
 
 public class Minimnumber {
