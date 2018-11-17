@@ -8,9 +8,9 @@ public class PrimNumber {
 		System.out.println("Introduceti un numar");
 
 		Scanner scanner = null;
-		int numar1 = scanner.nextInt();
+		int numar1 = in.nextInt();
 		System.out.println("Introduceti numarul final");
-		int numar2 = scanner.nextInt();
+		int numar2 = in.nextInt();
 
 		if (numar1 > numar2) {
 			showPrime(numar2, numar1);
