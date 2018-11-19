@@ -8,12 +8,9 @@ public class FactorialNumber {
 		Scanner in = new Scanner(System.in);
 		int no = 5;
 		int fac = 1;
-		for(int i = 1;i<=no;i++) 
-		{
-			
-			fac = fac*i;
+		for (int i = 1; i <= no; i++)
+
+			fac = fac * i;
 	}
-	
-	System.out.println("Factorial of"+no+"+fac);"
-}
+
 }
