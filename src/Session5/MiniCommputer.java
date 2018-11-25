@@ -14,7 +14,8 @@ package Session5;
 //creand un obiect de tip calculator si apelandu-i metodele.
 public class MiniCommputer {
 	int valoareCurenta;
-    int Parametru = 0;
+	int Parametru = 0;
+
 	public int getValoareCurenta() {
 		return valoareCurenta;
 	}
@@ -27,5 +28,8 @@ public class MiniCommputer {
 		super();
 		this.valoareCurenta = valoareCurenta;
 	}
-	public  void add
+
+	public void add(int n) {
+
+	}
 }

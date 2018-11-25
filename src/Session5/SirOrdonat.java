@@ -11,7 +11,7 @@ public class SirOrdonat {
 		Arrays.sort(arr1);
 		Arrays.sort(arr2);
 
-		System.out.println(sortedConcatenation(arr1, arr2));
+		System.out.println(Arrays.toString(sortedConcatenation(arr1, arr2)));
 
 	}
 
@@ -21,7 +21,7 @@ public class SirOrdonat {
 		int newArray[] = new int[lungimeArr1 + lungimeArr2];
 		System.arraycopy(arr1, 0, newArray, 0, lungimeArr1);
 		System.arraycopy(arr2, 0, newArray, lungimeArr1, lungimeArr2);
-
+		Arrays.sort(newArray);
 		return newArray;
 
 	}
