@@ -21,4 +21,10 @@ public class Keyboard {
 		kb.nextLine();
 		return value;
 	}
+
+	public String getString(String message) {
+		System.out.print(message);
+		String value = kb.nextLine();
+		return value;
+	}
 }

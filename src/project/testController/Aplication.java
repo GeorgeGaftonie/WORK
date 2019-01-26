@@ -4,10 +4,15 @@ import project.core.menu.BackAction;
 import project.core.menu.DeleteAction;
 import project.core.menu.Menu;
 import project.core.menu.MenuItem;
-import project.testController.actions.AddAction;
-import project.testController.actions.ChangeStatusRaport;
-import project.testController.actions.EditAction;
+import project.testController.actions.AddProjectAction;
+import project.testController.actions.AddTestCaseAction;
+import project.testController.actions.ChangeStatusTestCaseAction;
+import project.testController.actions.DeleteProjectAction;
+import project.testController.actions.DeleteTestCaseAction;
+import project.testController.actions.EditProjectAction;
+import project.testController.actions.EditTestCaseAction;
 import project.testController.actions.TestRaport;
+import project.testController.actions.ViewProjectAction;
 
 public class Aplication {
 	public static void main(String[] args) {
@@ -21,10 +26,15 @@ public class Aplication {
 	}
 
 	private MenuItem createMenu() {
-		MenuItem add = new AddAction();
-		MenuItem edit = new EditAction();
+		MenuItem add = new AddProjectAction();
+		MenuItem edit = new EditProjectAction();
 		MenuItem testraport = new TestRaport();
-		MenuItem changestatus = new ChangeStatusRaport();
+		MenuItem changestatus = new ChangeStatusTestCaseAction();
+		MenuItem viewproject = new ViewProjectAction();
+		MenuItem deleteproject = new DeleteProjectAction();
+		MenuItem addtestcase = new AddTestCaseAction();
+		MenuItem edittestcase = new EditTestCaseAction();
+		MenuItem deletetestcase = new DeleteTestCaseAction();
 
 		BackAction back = new BackAction("0", "Back");
 		BackAction exit = new BackAction("0", "Exit");
@@ -33,15 +43,16 @@ public class Aplication {
 		Menu managementProject = new Menu("1", "Management Project");
 		managementProject.addItem(add);
 		managementProject.addItem(edit);
-		managementProject.addItem(delete);
+		managementProject.addItem(deleteproject);
 		managementProject.addItem(testraport);
+		managementProject.addItem(viewproject);
 		managementProject.addItem(back);
 		managementProject.setBackAction(back);
 
 		Menu managementTestCase = new Menu("2", "Management Test Case");
-		managementTestCase.addItem(add);
-		managementTestCase.addItem(edit);
-		managementTestCase.addItem(delete);
+		managementTestCase.addItem(addtestcase);
+		managementTestCase.addItem(edittestcase);
+		managementTestCase.addItem(deletetestcase);
 		managementTestCase.addItem(changestatus);
 		managementTestCase.addItem(back);
 		managementTestCase.setBackAction(back);

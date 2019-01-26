@@ -2,16 +2,17 @@ package project.testController.actions;
 
 import project.core.menu.MenuItem;
 
-public class ChangeStatusRaport extends MenuItem {
+public class EditTestCaseAction extends MenuItem {
 
-	public ChangeStatusRaport() {
-		super("4", "Change Status ");
+	public EditTestCaseAction() {
+		super("2", "Edit Test Case");
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void doAction() {
-		System.out.println("change status..");
+		// TODO Auto-generated method stub
+
 	}
 
 }
