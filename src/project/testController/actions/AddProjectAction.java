@@ -3,7 +3,7 @@ package project.testController.actions;
 import project.core.keyboard.Keyboard;
 import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
-import project.testController.model.Reading;
+import project.testController.model.Project;
 
 public class AddProjectAction extends MenuItem {
 	private Keyboard keyboard = Keyboard.getInstance();
@@ -18,7 +18,7 @@ public class AddProjectAction extends MenuItem {
 		String name = keyboard.getString("Add name: ");
 		String description = keyboard.getString("Add description: ");
 
-		Reading readproject = new Reading(ID, name, description);
+		Project readproject = new Project(ID, name, description);
 		ApplicationSession.getInstance().getDatabase().addReading(readproject);
 
 	}

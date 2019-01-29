@@ -3,7 +3,7 @@ package project.testController.actions;
 import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
 import project.testController.model.Database;
-import project.testController.model.Reading;
+import project.testController.model.Project;
 
 public class ViewProjectAction extends MenuItem {
 
@@ -14,7 +14,7 @@ public class ViewProjectAction extends MenuItem {
 	@Override
 	public void doAction() {
 		Database database = ApplicationSession.getInstance().getDatabase();
-		for (Reading reading : database.getReadings())
+		for (Project reading : database.getReadings())
 
 		{
 			System.out.println(reading);

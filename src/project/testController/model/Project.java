@@ -2,14 +2,14 @@ package project.testController.model;
 
 import java.io.Serializable;
 
-public class Reading implements Serializable {
+public class Project implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String ID;
 	private String name;
 	private String description;
 
-	public Reading(String ID, String name, String description) {
+	public Project(String ID, String name, String description) {
 		this.ID = ID;
 		this.name = name;
 		this.description = description;

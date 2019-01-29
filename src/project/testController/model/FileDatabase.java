@@ -10,10 +10,10 @@ import project.testController.utils.Serializer;
 public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private List<Reading> readings = new ArrayList<Reading>();
+	private List<Project> readings = new ArrayList<Project>();
 
 	@Override
-	public void addReading(Reading reading) {
+	public void addReading(Project reading) {
 		readings.add(reading);
 		Serializer serializer = ApplicationSession.getInstance()
 				.getSerializer();
@@ -21,13 +21,13 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	@Override
-	public List<Reading> getReadings() {
+	public List<Project> getReadings() {
 		return readings;
 	}
 
 	@Override
-	public Reading getReadingByID(String iD) {
-		for (Reading reading : readings) {
+	public Project getReadingByID(String iD) {
+		for (Project reading : readings) {
 			return reading;
 		}
 		return null;
@@ -35,7 +35,7 @@ public class FileDatabase implements Database, Serializable {
 
 	@Override
 	public void editProject(String ID, String name, String description) {
-		Reading reading = getReadingByID(ID);
+		Project reading = getReadingByID(ID);
 		reading.edit(name, description);
 		Serializer serializer = ApplicationSession.getInstance()
 				.getSerializer();

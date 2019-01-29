@@ -4,7 +4,7 @@ import project.core.keyboard.Keyboard;
 import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
 import project.testController.model.Database;
-import project.testController.model.Reading;
+import project.testController.model.Project;
 
 public class EditProjectAction extends MenuItem {
 	private Keyboard keyboard = Keyboard.getInstance();
@@ -17,7 +17,7 @@ public class EditProjectAction extends MenuItem {
 	public void doAction() {
 		Database db = ApplicationSession.getInstance().getDatabase();
 		String ID = keyboard.getString("ID: ");
-		Reading reading = db.getReadingByID(ID);
+		Project reading = db.getReadingByID(ID);
 		if (reading == null) {
 			System.out.println("Reading does not exist ! !");
 			return;
