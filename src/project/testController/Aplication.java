@@ -13,6 +13,9 @@ import project.testController.actions.EditProjectAction;
 import project.testController.actions.EditTestCaseAction;
 import project.testController.actions.TestRaport;
 import project.testController.actions.ViewProjectAction;
+import project.testController.actions.ViewTestCaseAction;
+import project.testController.model.Database;
+import project.testController.utils.Serializer;
 
 public class Aplication {
 	public static void main(String[] args) {
@@ -21,6 +24,15 @@ public class Aplication {
 	}
 
 	private void run() {
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
+		Database database = serializer.load();
+		if (database == null) {
+			return;
+
+		}
+		ApplicationSession.getInstance().setDatabase(database);
+
 		MenuItem mainMenu = createMenu();
 		mainMenu.doAction();
 	}
@@ -35,6 +47,7 @@ public class Aplication {
 		MenuItem addtestcase = new AddTestCaseAction();
 		MenuItem edittestcase = new EditTestCaseAction();
 		MenuItem deletetestcase = new DeleteTestCaseAction();
+		MenuItem viewtestcase = new ViewTestCaseAction();
 
 		BackAction back = new BackAction("0", "Back");
 		BackAction exit = new BackAction("0", "Exit");
@@ -54,6 +67,7 @@ public class Aplication {
 		managementTestCase.addItem(edittestcase);
 		managementTestCase.addItem(deletetestcase);
 		managementTestCase.addItem(changestatus);
+		managementTestCase.addItem(viewtestcase);
 		managementTestCase.addItem(back);
 		managementTestCase.setBackAction(back);
 

@@ -1,3 +1,5 @@
+package sessions.s03;
+
 public class Zilecalenadaristice {
 	public static void main(String[] args) {
 

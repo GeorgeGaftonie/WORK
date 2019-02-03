@@ -17,13 +17,12 @@ public class DeleteProjectAction extends MenuItem {
 	public void doAction() {
 		Database db = ApplicationSession.getInstance().getDatabase();
 		String ID = keyboard.getString("ID: ");
-		Project reading = db.getReadingByID(ID);
-		if (reading == null) {
+		Project project = db.getProjectByID(ID);
+		if (project == null) {
 			System.out.println("Reading does not exist ! !");
 			return;
-		} else {
-			reading.delete(ID, name);
 
 		}
+		ApplicationSession.getInstance().getDatabase().deleteProject(ID);
 	}
 }

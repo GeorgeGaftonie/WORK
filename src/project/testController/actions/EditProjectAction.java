@@ -17,9 +17,9 @@ public class EditProjectAction extends MenuItem {
 	public void doAction() {
 		Database db = ApplicationSession.getInstance().getDatabase();
 		String ID = keyboard.getString("ID: ");
-		Project reading = db.getReadingByID(ID);
-		if (reading == null) {
-			System.out.println("Reading does not exist ! !");
+		Project project = db.getProjectByID(ID);
+		if (project == null) {
+			System.out.println("Project does not exist ! !");
 			return;
 		}
 

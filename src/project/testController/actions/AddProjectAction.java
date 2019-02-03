@@ -18,8 +18,8 @@ public class AddProjectAction extends MenuItem {
 		String name = keyboard.getString("Add name: ");
 		String description = keyboard.getString("Add description: ");
 
-		Project readproject = new Project(ID, name, description);
-		ApplicationSession.getInstance().getDatabase().addReading(readproject);
+		Project project = new Project(ID, name, description);
+		ApplicationSession.getInstance().getDatabase().addProject(project);
 
 	}
 

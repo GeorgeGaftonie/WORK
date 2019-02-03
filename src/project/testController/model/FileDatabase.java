@@ -2,6 +2,7 @@ package project.testController.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import project.testController.ApplicationSession;
@@ -10,35 +11,103 @@ import project.testController.utils.Serializer;
 public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private List<Project> readings = new ArrayList<Project>();
+	private List<Project> projects = new ArrayList<Project>();
 
 	@Override
-	public void addReading(Project reading) {
-		readings.add(reading);
+	public void addProject(Project project) {
+		projects.add(project);
 		Serializer serializer = ApplicationSession.getInstance()
 				.getSerializer();
 		serializer.save(this);
 	}
 
 	@Override
-	public List<Project> getReadings() {
-		return readings;
+	public List<Project> getProject() {
+		return projects;
 	}
 
 	@Override
-	public Project getReadingByID(String iD) {
-		for (Project reading : readings) {
-			return reading;
+	public Project getProjectByID(String ID) {
+		for (Project project : projects) {
+			return project;
 		}
 		return null;
 	}
 
 	@Override
 	public void editProject(String ID, String name, String description) {
-		Project reading = getReadingByID(ID);
-		reading.edit(name, description);
+		Project project = getProjectByID(ID);
+		project.edit(name, description);
 		Serializer serializer = ApplicationSession.getInstance()
 				.getSerializer();
+	}
+
+	@Override
+	public void deleteProject(String ID) {
+		Iterator<Project> iterator = projects.iterator();
+		while (iterator.hasNext()) {
+			Project project = iterator.next();
+			if (project.hasID(ID)) {
+				iterator.remove();
+
+			}
+		}
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
+		serializer.save(this);
+	}
+
+	private List<Testcase> testcases = new ArrayList<Testcase>();
+
+	@Override
+	public void addTestCase(Testcase testcase) {
+		testcases.add(testcase);
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
+		serializer.save(this);
+	}
+
+	@Override
+	public Testcase getTestCaseByID(String iD) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void editTestCase(String iD, String name, String description,
+			String status) {
+		Testcase testcase = getTestCaseByID(iD);
+		testcase.edit(name, description, status);
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
+		serializer.save(this);
+	}
+
+	@Override
+	public void deleteTestCase(String ID) {
+		Iterator<Testcase> iterator = testcases.iterator();
+		while (iterator.hasNext()) {
+			Testcase testcase = iterator.next();
+			if (testcase.hasID(ID)) {
+				iterator.remove();
+
+			}
+		}
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
+		serializer.save(this);
+	}
+
+	@Override
+	public List<Testcase> getTestCase() {
+
+		return testcases;
+	}
+
+	@Override
+	public void changeStatus(String iD, String name, String description,
+			String status) {
+
 	}
 
 }

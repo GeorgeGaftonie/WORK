@@ -1,6 +1,7 @@
 package ses04;
 
 public class PersonClient {
+	@SuppressWarnings("null")
 	public static void main(String[] args) {
 		Person p1 = new Person();
 		Person p2 = new Person();
@@ -10,7 +11,7 @@ public class PersonClient {
 		System.out.println(p2.name);
 
 		Person p3 = null;
-		System.out.println(p3name);
+		System.out.println(p3.name);
 		p3 = p1;
 		System.out.println(p3.name);
 		p3.name = "Ion";
