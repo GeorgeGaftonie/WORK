@@ -3,6 +3,8 @@ package project.testController.actions;
 import project.core.keyboard.Keyboard;
 import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
+import project.testController.model.Project;
+import project.testController.model.Status;
 import project.testController.model.Testcase;
 
 public class AddTestCaseAction extends MenuItem {
@@ -18,8 +20,8 @@ public class AddTestCaseAction extends MenuItem {
 		String ID = keyboard.getString("ID: ");
 		String name = keyboard.getString("Name: ");
 		String description = keyboard.getString("Description: ");
-		String status = keyboard.getString("Status Test Case: ");
-		Testcase testcase = new Testcase(ID, name, description, status);
+		Project project = keyboard.getProject("Project: ");
+		Testcase testcase = new Testcase(ID, name, description, Status.UNTESTED, project);
 		ApplicationSession.getInstance().getDatabase().addTestCase(testcase);
 	}
 }

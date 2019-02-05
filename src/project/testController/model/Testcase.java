@@ -11,18 +11,20 @@ public class Testcase implements Serializable {
 	private String ID;
 	private String name;
 	private String description;
-	private String status;
+	private Status status;
+	private Project project;
 
-	public Testcase(String ID, String name, String description, String status) {
+	public Testcase(String ID, String name, String description, Status status, Project project) {
 		this.ID = ID;
 		this.name = name;
 		this.description = description;
 		this.status = status;
+		this.project = project;
 	}
 
 	@Override
 	public String toString() {
-		return " " + ID + " " + name + " " + description + " " + status;
+		return " " + ID + " " + name + " " + description + " " + status + " " + project;
 	}
 
 	public void edit(String name2, String description2, String status2) {
