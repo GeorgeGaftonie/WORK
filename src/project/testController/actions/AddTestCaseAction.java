@@ -20,6 +20,6 @@ public class AddTestCaseAction extends MenuItem {
 		String description = keyboard.getString("Description: ");
 		String status = keyboard.getString("Status Test Case: ");
 		Testcase testcase = new Testcase(ID, name, description, status);
-		ApplicationSession.getInstance().getDatabase();
+		ApplicationSession.getInstance().getDatabase().addTestCase(testcase);
 	}
 }
