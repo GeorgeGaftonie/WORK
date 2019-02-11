@@ -26,16 +26,8 @@ public interface Database {
 
 	void deleteTestCase(String ID);
 
-	void changeStatus(String iD, String name, String description, String status);
-
 	Serializer getProjectByID();
 
-	// deleteProject(String id);
-	// addTestCase(String projectId, TestCase testCase); (Status -> enum)
+	void changeStatus(String ID, String status);
 
-	// editTestCase (String id, String name, String desc, String precondition,
-	// String action, String expected, Status status)
-	// deleteTestCase(String id)
-	// changeStatus(String id, Status newStatus)
-	// List<TestCase> getTestCasesByProject(String projectId)
 }

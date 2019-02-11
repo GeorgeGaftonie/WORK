@@ -4,6 +4,7 @@ import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
 import project.testController.model.Database;
 import project.testController.model.Project;
+import project.testController.model.Status;
 
 public class ViewProjectAction extends MenuItem {
 
@@ -17,7 +18,7 @@ public class ViewProjectAction extends MenuItem {
 		for (Project project : database.getProject())
 
 		{
-			System.out.println(project);
+			System.out.println(project + "" + Status.UNTESTED);
 		}
 	}
 

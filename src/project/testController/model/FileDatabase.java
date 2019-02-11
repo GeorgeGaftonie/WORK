@@ -16,7 +16,8 @@ public class FileDatabase implements Database, Serializable {
 	@Override
 	public void addProject(Project project) {
 		projects.add(project);
-		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
 		serializer.save(this);
 	}
 
@@ -39,7 +40,8 @@ public class FileDatabase implements Database, Serializable {
 	public void editProject(String ID, String name, String description) {
 		Project project = getProjectByID(ID);
 		project.edit(name, description);
-		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
 	}
 
 	@Override
@@ -52,7 +54,8 @@ public class FileDatabase implements Database, Serializable {
 
 			}
 		}
-		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
 		serializer.save(this);
 	}
 
@@ -61,7 +64,8 @@ public class FileDatabase implements Database, Serializable {
 	@Override
 	public void addTestCase(Testcase testcase) {
 		testcases.add(testcase);
-		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
 		serializer.save(this);
 	}
 
@@ -72,10 +76,12 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	@Override
-	public void editTestCase(String iD, String name, String description, String status) {
+	public void editTestCase(String iD, String name, String description,
+			String status) {
 		Testcase testcase = getTestCaseByID(iD);
 		testcase.edit(name, description, status);
-		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
 		serializer.save(this);
 	}
 
@@ -89,7 +95,8 @@ public class FileDatabase implements Database, Serializable {
 
 			}
 		}
-		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
 		serializer.save(this);
 	}
 
@@ -100,14 +107,19 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	@Override
-	public void changeStatus(String iD, String name, String description, String status) {
-
-	}
-
-	@Override
 	public Serializer getProjectByID() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void changeStatus(String id, String status) {
+		Project project = getProjectByID(id);
+		project.changeStatus(id);
+		Serializer serializer = ApplicationSession.getInstance()
+				.getSerializer();
+		serializer.save(this);
+
 	}
 
 }
