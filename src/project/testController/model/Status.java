@@ -9,8 +9,8 @@ public enum Status {
 		this.statusEnum = statusEnum;
 	}
 
-	Status PASS = Status.valueOf("1");
-	Status FAIL = Status.valueOf("2");
-	Status UNT = Status.valueOf("3");
+	// Status PASS = Status.valueOf("1");
+	// Status FAIL = Status.valueOf("2");
+	// Status UNT = Status.valueOf("3");
 
 }

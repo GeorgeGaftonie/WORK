@@ -16,8 +16,7 @@ public class FileDatabase implements Database, Serializable {
 	@Override
 	public void addProject(Project project) {
 		projects.add(project);
-		Serializer serializer = ApplicationSession.getInstance()
-				.getSerializer();
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
 		serializer.save(this);
 	}
 
@@ -40,8 +39,7 @@ public class FileDatabase implements Database, Serializable {
 	public void editProject(String ID, String name, String description) {
 		Project project = getProjectByID(ID);
 		project.edit(name, description);
-		Serializer serializer = ApplicationSession.getInstance()
-				.getSerializer();
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
 	}
 
 	@Override
@@ -54,8 +52,7 @@ public class FileDatabase implements Database, Serializable {
 
 			}
 		}
-		Serializer serializer = ApplicationSession.getInstance()
-				.getSerializer();
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
 		serializer.save(this);
 	}
 
@@ -64,8 +61,7 @@ public class FileDatabase implements Database, Serializable {
 	@Override
 	public void addTestCase(Testcase testcase) {
 		testcases.add(testcase);
-		Serializer serializer = ApplicationSession.getInstance()
-				.getSerializer();
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
 		serializer.save(this);
 	}
 
@@ -83,8 +79,7 @@ public class FileDatabase implements Database, Serializable {
 	public void editTestCase(String ID, String name, String description) {
 		Testcase testcase = getTestCaseByID(ID);
 		testcase.edit(name, description);
-		Serializer serializer = ApplicationSession.getInstance()
-				.getSerializer();
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
 		serializer.save(this);
 	}
 
@@ -98,8 +93,7 @@ public class FileDatabase implements Database, Serializable {
 
 			}
 		}
-		Serializer serializer = ApplicationSession.getInstance()
-				.getSerializer();
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
 		serializer.save(this);
 	}
 
@@ -113,6 +107,13 @@ public class FileDatabase implements Database, Serializable {
 	public Serializer getProjectByID() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void changeStatus(Testcase testcase, Status statusEnum) {
+		testcase.setStatus(statusEnum);
+		Serializer serializer = ApplicationSession.getInstance().getSerializer();
+		serializer.save(this);
 	}
 
 }

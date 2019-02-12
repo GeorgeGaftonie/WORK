@@ -1,11 +1,10 @@
 package project.testController.actions;
 
-import javax.net.ssl.SSLEngineResult.Status;
-
 import project.core.keyboard.Keyboard;
 import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
 import project.testController.model.Database;
+import project.testController.model.Status;
 import project.testController.model.Testcase;
 
 public class ChangeStatusTestCaseAction extends MenuItem {
@@ -29,7 +28,7 @@ public class ChangeStatusTestCaseAction extends MenuItem {
 		String s = keyboard.getString("Status: ");
 		Status statusEnum = Status.valueOf(s);
 
-		testcase.setStatus(statusEnum);
+		db.changeStatus(testcase, statusEnum);
 
 	}
 }

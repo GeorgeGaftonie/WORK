@@ -28,6 +28,8 @@ public interface Database {
 
 	Serializer getProjectByID();
 
+	void changeStatus(Testcase testcase, Status statusEnum);
+
 	// void changeStatus(String ID, Status status);
 
 }
