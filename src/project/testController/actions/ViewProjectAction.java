@@ -18,7 +18,7 @@ public class ViewProjectAction extends MenuItem {
 		for (Project project : database.getProject())
 
 		{
-			System.out.println(project + "" + Status.UNTESTED);
+			System.out.println(project);
 		}
 	}
 

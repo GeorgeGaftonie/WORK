@@ -2,6 +2,8 @@ package project.testController.model;
 
 import java.io.Serializable;
 
+import javax.net.ssl.SSLEngineResult.Status;
+
 public class Testcase implements Serializable {
 	/**
 	 * 
@@ -14,27 +16,33 @@ public class Testcase implements Serializable {
 	private Status status;
 	private Project project;
 
-	public Testcase(String ID, String name, String description, Status status,
-			Project project) {
+	public Testcase(String ID, String name, String description,
+			Project project, Status status) {
 		this.ID = ID;
 		this.name = name;
 		this.description = description;
-		this.status = status;
 		this.project = project;
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
-		return " " + ID + " " + name + " " + description + " " + status + " "
-				+ project;
+		return " | Test Case ID: " + ID + " " + "| Name: " + name + " "
+				+ "| Description: " + description + "| Status: " + status
+				+ "| --- " + project;
 	}
 
-	public void edit(String name2, String description2, String status2) {
-
+	public void edit(String name2, String description2) {
+		name = name2;
+		description = description2;
 	}
 
 	public boolean hasID(String ID2) {
 		return ID.equals(ID2);
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 }

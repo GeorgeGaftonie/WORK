@@ -22,12 +22,12 @@ public interface Database {
 
 	Testcase getTestCaseByID(String ID);
 
-	void editTestCase(String iD, String name, String description, String status);
+	void editTestCase(String iD, String name, String description);
 
 	void deleteTestCase(String ID);
 
 	Serializer getProjectByID();
 
-	void changeStatus(String ID, String status);
+	// void changeStatus(String ID, Status status);
 
 }

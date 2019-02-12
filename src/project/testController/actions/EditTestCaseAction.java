@@ -26,7 +26,6 @@ public class EditTestCaseAction extends MenuItem {
 		}
 		String name = keyboard.getString("New name:");
 		String description = keyboard.getString("New description:");
-		String status = keyboard.getString("new status");
-		db.editTestCase(ID, name, description, status);
+		db.editTestCase(ID, name, description);
 	}
 }

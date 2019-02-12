@@ -4,7 +4,6 @@ import project.core.keyboard.Keyboard;
 import project.core.menu.MenuItem;
 import project.testController.ApplicationSession;
 import project.testController.model.Project;
-import project.testController.model.Status;
 import project.testController.model.Testcase;
 
 public class AddTestCaseAction extends MenuItem {
@@ -21,7 +20,7 @@ public class AddTestCaseAction extends MenuItem {
 		String name = keyboard.getString("Name: ");
 		String description = keyboard.getString("Description: ");
 		Project project = keyboard.getProject("Project: ");
-		Testcase testcase = new Testcase(ID, name, description, Status.UNTESTED, project);
+		Testcase testcase = new Testcase(ID, name, description, project, null);
 		ApplicationSession.getInstance().getDatabase().addTestCase(testcase);
 	}
 }
